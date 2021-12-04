@@ -21,3 +21,11 @@ char* cstring_raw(CString* string) {
 
     return copy;
 }
+
+char cstring_get(CString* string, size_t index) {
+    if(index > string->length) {
+        return 0;
+    }
+
+    return string->raw_string[index];
+}
