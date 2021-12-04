@@ -14,9 +14,9 @@ CString* cstring_new(const char* str);
 // returns raw string copy
 char* cstring_raw(CString* string);
 
-char cstring_get(size_t index);
+char cstring_get(CString* string, size_t index);
 
-void cstring_set(char c, size_t index);
+void cstring_set(CString* string, char c, size_t index);
 
 
 #endif //CSTRING_H
