@@ -29,3 +29,9 @@ char cstring_get(CString* string, size_t index) {
 
     return string->raw_string[index];
 }
+
+void cstring_set(CString* string, char c, size_t index) {
+    if(index < string->length) {
+        string->raw_string[index] = c;
+    }
+}

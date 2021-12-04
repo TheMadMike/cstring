@@ -39,6 +39,22 @@ void cstring_get_should_return_null_when_index_out_of_range() {
     assert(cstring_get(string, 4) == 0);
 }
 
+void cstring_set_should_modify_string() {
+    CString* string = cstring_new("abx");
+    
+    cstring_set(string, 'c', 2);
+
+    assert(cstring_get(string, 2) == 'c');
+}
+
+void cstring_set_should_not_modify_string_when_index_out_of_range() {
+    CString* string = cstring_new("a");
+    
+    cstring_set(string, 'c', 1);
+
+    assert(cstring_get(string, 0) == 'a');
+}
+
 void run_all_tests() {
     // cstring_new
     cstring_new_should_correctly_initialize_cstring();
@@ -49,4 +65,8 @@ void run_all_tests() {
     // cstring_get
     cstring_get_should_return_correct_character();
     cstring_get_should_return_null_when_index_out_of_range();
+
+    //cstring_set
+    cstring_set_should_modify_string();
+    cstring_set_should_not_modify_string_when_index_out_of_range();
 }
