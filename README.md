@@ -22,3 +22,5 @@ make
 ```shell
 ./test
 ```
+
+Copyright 2021 by Michał Gibas
