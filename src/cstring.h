@@ -11,6 +11,9 @@ typedef struct CString
  
 CString* cstring_new(const char* str);
 
-//TODO: declare and define the rest of the specified functions
+// returns raw string copy
+char* cstring_raw(CString* string);
+
+
 
 #endif //CSTRING_H

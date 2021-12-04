@@ -14,3 +14,10 @@ CString* cstring_new(const char* str) {
 
     return cstr;
 }
+
+char* cstring_raw(CString* string) {
+    char* copy = (char*) malloc(sizeof(char) * (string->length + 1));
+    memcpy(copy, string->raw_string, string->length + 1);
+
+    return copy;
+}

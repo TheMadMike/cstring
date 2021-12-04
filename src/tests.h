@@ -14,6 +14,16 @@ void cstring_new_should_correctly_initialize_cstring() {
     free(string);
 }
 
+void cstring_raw_should_return_correct_string() {
+    CString* string = cstring_new("abc");
+    const char* raw = cstring_raw(string);
+
+    assert(raw != NULL);
+    assert(strcmp(raw, string->raw_string) == 0);
+    assert(raw != string->raw_string);
+}
+
 void run_all_tests() {
     cstring_new_should_correctly_initialize_cstring();
+    cstring_raw_should_return_correct_string();
 }
