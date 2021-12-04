@@ -5,7 +5,8 @@
 
 typedef struct CString
 {
-    //TODO: fill
+    char* raw_string;
+    size_t length;
 } CString;
  
 CString* cstring_new(const char* str);
